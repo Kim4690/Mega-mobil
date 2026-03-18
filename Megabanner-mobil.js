@@ -10,7 +10,8 @@
       <div class="content">
 
         <div class="big-text">
-          <span>VIDEN</span>     <span class="om">OM</span>
+          <div>VIDEN</div>
+          <div class="om">OM</div>
         </div>
 
         <div class="text">
@@ -19,7 +20,7 @@
         </div>
 
         <div class="cta">
-          Se alle fagsektioner på BygTek.dk<br>
+          Se alle fagsektioner<br>
           under VIDEN OM
         </div>
 
@@ -41,7 +42,8 @@
           <div class="contact-box">
             <strong>Kim Anker</strong><br>
             kim@odsgard.dk<br>
-            26 25 51 22
+            26 25 51 22 / 46 93 66 22<br><br>
+            Om markedsføring på BygTek.dk
           </div>
 
         </div>
@@ -70,16 +72,17 @@
         background:url('https://raw.githubusercontent.com/Kim4690/Megabanner/main/Megabanner-bg.jpg') center/cover no-repeat;
       }
 
+      /* 🔥 BLÅ GRADIENT (ikke sort) */
       .banner300::after {
         content:"";
         position:absolute;
         inset:0;
-       background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.3),
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.8)
-);
+        background:linear-gradient(
+          to bottom,
+          rgba(0,60,120,0.95),
+          rgba(0,90,160,0.75),
+          rgba(0,120,200,0.4)
+        );
       }
 
       .content {
@@ -99,27 +102,24 @@
         top:28%;
         left:50%;
         transform:translate(-50%, -50%) scale(0.3);
-        font-size:42px;
+        font-size:34px;
         font-weight:800;
-        animation:zoomText 2.5s forwards;
-        white-space:nowrap;
-      }
-
-      .big-text span {
         color:#ffd200;
+        animation:zoomText 2.5s forwards;
+        text-align:left;
       }
 
       .big-text .om {
-        margin-left:10px; /* 🔥 flytter OM mod højre */
+        margin-left:30px; /* 🔥 rykker OM til højre */
       }
 
       @keyframes zoomText {
         0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; }
         40% { transform:translate(-50%, -50%) scale(1.2); opacity:1; }
-        100% { transform:translate(-50%, -50%) scale(1); color:#fff; }
+        100% { transform:translate(-50%, -50%) scale(1); color:#ffffff; }
       }
 
-      /* TEKST (FORBEDRET) */
+      /* TEKST */
       .text {
         position:absolute;
         bottom:75px;
@@ -129,7 +129,7 @@
         color:#ffffff;
         font-size:15px;
         line-height:1.4;
-        text-shadow:0 2px 6px rgba(0,0,0,0.6); /* 🔥 bedre læsbarhed */
+        text-shadow:0 2px 6px rgba(0,0,0,0.5);
       }
 
       /* CTA */
