@@ -9,7 +9,9 @@
 
       <div class="content">
 
-        <div class="big-text">VIDEN OM</div>
+        <div class="big-text">
+          <span>VIDEN</span> <span class="om">OM</span>
+        </div>
 
         <div class="text">
           15 fagsektioner med nyheder,<br>
@@ -39,8 +41,7 @@
           <div class="contact-box">
             <strong>Kim Anker</strong><br>
             kim@odsgard.dk<br>
-            26 25 51 22 / 46 93 66 22<br>
-            For informationer om markedsføring på BygTek.dk<br>
+            26 25 51 22
           </div>
 
         </div>
@@ -88,39 +89,50 @@
         transition:opacity 0.3s ease;
       }
 
-      /* SKJUL VED OVERLAY */
       .banner300.hide-content .content {
         opacity:0;
-        pointer-events:none;
       }
 
+      /* VIDEN OM */
       .big-text {
         position:absolute;
-        top:30%;
+        top:28%;
         left:50%;
         transform:translate(-50%, -50%) scale(0.3);
-        font-size:32px;
+        font-size:34px;
         font-weight:800;
-        color:#ffd200;
         animation:zoomText 2.5s forwards;
+        white-space:nowrap;
+      }
+
+      .big-text span {
+        color:#ffd200;
+      }
+
+      .big-text .om {
+        margin-left:10px; /* 🔥 flytter OM mod højre */
       }
 
       @keyframes zoomText {
         0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; }
         40% { transform:translate(-50%, -50%) scale(1.2); opacity:1; }
-        100% { transform:translate(-50%, -50%) scale(1); color:#ffffff; }
+        100% { transform:translate(-50%, -50%) scale(1); color:#fff; }
       }
 
+      /* TEKST (FORBEDRET) */
       .text {
         position:absolute;
-        bottom:70px;
+        bottom:75px;
         left:10px;
         right:10px;
-        color:#fff;
-        font-size:13px;
-        line-height:1.3;
+        text-align:center;
+        color:#ffffff;
+        font-size:15px;
+        line-height:1.4;
+        text-shadow:0 2px 6px rgba(0,0,0,0.6); /* 🔥 bedre læsbarhed */
       }
 
+      /* CTA */
       .cta {
         position:absolute;
         bottom:0;
@@ -189,13 +201,13 @@
 
     banner.addEventListener('click', function () {
       modal.classList.add('active');
-      banner.classList.add('hide-content'); // 🔥 skjuler banner
+      banner.classList.add('hide-content');
     });
 
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       modal.classList.remove('active');
-      banner.classList.remove('hide-content'); // 🔥 viser igen
+      banner.classList.remove('hide-content');
     });
 
   }
