@@ -39,7 +39,8 @@
           <div class="contact-box">
             <strong>Kim Anker</strong><br>
             kim@odsgard.dk<br>
-            26 25 51 22
+            26 25 51 22<br>
+            For informationer om markedsføring på BygTek.dk<br>
           </div>
 
         </div>
