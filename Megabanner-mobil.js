@@ -103,7 +103,7 @@
         top:28%;
         left:50%;
         transform:translate(-50%, -50%) scale(0.3);
-        font-size:clamp(22px, 8vw, 42px);
+        font-size:clamp(32px, 8vw, 42px);
         font-weight:800;
         color:#fff200;
         animation:zoomText 2.5s forwards;
@@ -136,7 +136,7 @@
         right:10px;
         text-align:center;
         color:#ffffff;
-        font-size:clamp(11px, 3.5vw, 15px);
+        font-size:clamp(15px, 3.5vw, 15px);
         line-height:1.4;
         text-shadow:0 2px 6px rgba(0,0,0,0.5);
       }
@@ -149,7 +149,7 @@
         background:#ffd200;
         color:#000;
         padding:10px;
-        font-size:clamp(10px, 3vw, 13px);
+        font-size:clamp(15px, 3vw, 13px);
         text-align:center;
       }
 
