@@ -74,8 +74,8 @@
         inset:0;
         background:linear-gradient(
           to bottom,
-          rgba(0,60,120,0.8),
-          rgba(0,90,160,0.5),
+          rgba(0,60,120,0.85),
+          rgba(0,90,160,0.6),
           transparent
         );
       }
@@ -84,6 +84,13 @@
         position:relative;
         z-index:2;
         height:100%;
+        transition:opacity 0.3s ease;
+      }
+
+      /* SKJUL VED OVERLAY */
+      .banner300.hide-content .content {
+        opacity:0;
+        pointer-events:none;
       }
 
       .big-text {
@@ -93,14 +100,14 @@
         transform:translate(-50%, -50%) scale(0.3);
         font-size:32px;
         font-weight:800;
-        color:#ffcc00;
+        color:#ffd200;
         animation:zoomText 2.5s forwards;
       }
 
       @keyframes zoomText {
         0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; }
         40% { transform:translate(-50%, -50%) scale(1.2); opacity:1; }
-        100% { transform:translate(-50%, -50%) scale(1); color:#fff; }
+        100% { transform:translate(-50%, -50%) scale(1); color:#ffffff; }
       }
 
       .text {
@@ -118,7 +125,7 @@
         bottom:0;
         left:0;
         right:0;
-        background:#ffcc00;
+        background:#ffd200;
         color:#000;
         padding:10px;
         font-size:13px;
@@ -129,13 +136,14 @@
       .banner-modal {
         position:absolute;
         inset:0;
-        background:rgba(0,0,0,0.75);
+        background:#163575;
         display:flex;
         align-items:center;
         justify-content:center;
         opacity:0;
         pointer-events:none;
         transition:.3s;
+        z-index:10;
       }
 
       .banner-modal.active {
@@ -144,18 +152,16 @@
       }
 
       .modal-content {
-        background:#163575;
         color:#fff;
         padding:20px;
         width:85%;
         text-align:center;
-        border-radius:10px;
         position:relative;
         font-size:13px;
       }
 
       .modal-content h2 {
-        color:#ffcc00;
+        color:#ffd200;
         font-size:16px;
         margin-bottom:10px;
       }
@@ -175,18 +181,20 @@
     `;
     document.head.appendChild(style);
 
-    // === OVERLAY LOGIK ===
+    // === LOGIK ===
     var banner = document.querySelector('.banner300');
     var modal = document.getElementById('bannerModal');
     var closeBtn = document.querySelector('.close');
 
     banner.addEventListener('click', function () {
       modal.classList.add('active');
+      banner.classList.add('hide-content'); // 🔥 skjuler banner
     });
 
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       modal.classList.remove('active');
+      banner.classList.remove('hide-content'); // 🔥 viser igen
     });
 
   }
