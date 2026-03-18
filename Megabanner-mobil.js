@@ -74,12 +74,12 @@
         content:"";
         position:absolute;
         inset:0;
-        background:linear-gradient(
-          to bottom,
-          rgba(0,60,120,0.85),
-          rgba(0,90,160,0.6),
-          transparent
-        );
+       background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.8)
+);
       }
 
       .content {
