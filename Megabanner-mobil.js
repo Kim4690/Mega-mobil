@@ -10,7 +10,7 @@
       <div class="content">
 
         <div class="big-text">
-          <span>VIDEN</span> <span class="om">OM</span>
+          <span>VIDEN</span>     <span class="om">OM</span>
         </div>
 
         <div class="text">
@@ -76,9 +76,9 @@
         inset:0;
        background:linear-gradient(
         to bottom,
-        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.3),
         rgba(0,0,0,0.6),
-        rgba(0,0,0,0.3)
+        rgba(0,0,0,0.8)
 );
       }
 
@@ -99,7 +99,7 @@
         top:28%;
         left:50%;
         transform:translate(-50%, -50%) scale(0.3);
-        font-size:34px;
+        font-size:42px;
         font-weight:800;
         animation:zoomText 2.5s forwards;
         white-space:nowrap;
