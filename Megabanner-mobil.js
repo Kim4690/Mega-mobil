@@ -20,7 +20,7 @@
         </div>
 
         <div class="cta">
-          Se alle fagsektioner<br>
+          Se alle fagsektioner på BygTek.dk<br>
           under VIDEN OM
         </div>
 
@@ -117,7 +117,7 @@
       @keyframes zoomText {
         0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; }
         40% { transform:translate(-50%, -50%) scale(1.2); opacity:1; }
-        100% { transform:translate(-50%, -50%) scale(1); color:#fff200; }
+        80% { transform:translate(-50%, -50%) scale(1); color:#ffffff; }
       }
 
       /* TEKST */
