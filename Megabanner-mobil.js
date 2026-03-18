@@ -115,11 +115,21 @@
       }
 
       @keyframes zoomText {
-        0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; }
-        40% { transform:translate(-50%, -50%) scale(1.2); opacity:1; }
-        50% { transform:translate(-50%, -50%) scale(1); color:#ffffff; }
-      }
+  0% {
+    transform:translate(-50%, -50%) scale(0.3);
+    opacity:0;
+  }
 
+  40% {
+    transform:translate(-50%, -50%) scale(1.3);
+    opacity:1;
+  }
+
+  100% {
+    transform:translate(-50%, -50%) scale(1.15); /* 🔥 større slut */
+    color:#ffffff;
+  }
+}
       /* TEKST */
       .text {
         position:absolute;
