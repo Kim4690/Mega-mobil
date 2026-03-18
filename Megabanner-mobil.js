@@ -82,7 +82,7 @@
           to bottom,
           rgba(0,60,120,0.95),
           rgba(0,90,160,0.75),
-          rgba(0,120,200,0.4)
+          rgba(0,120,200,0.5)
         );
       }
 
@@ -103,9 +103,9 @@
         top:28%;
         left:50%;
         transform:translate(-50%, -50%) scale(0.3);
-        font-size:34px;
+        font-size:42px;
         font-weight:800;
-        color:#ffd200;
+        color:#fff200;
         animation:zoomText 2.5s forwards;
         text-align:left;
       }
