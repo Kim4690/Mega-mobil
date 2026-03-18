@@ -36,6 +36,7 @@
 
           <p>
             Tak for at du klikkede på banneret.<br><br>
+            Denne plads kan blive din<br><br>
             Du er meget velkommen til at kontakte:
           </p>
 
