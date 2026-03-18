@@ -19,7 +19,7 @@
         </div>
 
         <div class="cta">
-          Se alle fagsektioner<br>
+          Se alle fagsektioner på BygTek.dk<br>
           under VIDEN OM
         </div>
 
