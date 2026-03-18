@@ -56,16 +56,18 @@
     document.body.insertAdjacentHTML("beforeend", html);
 
     // === CSS ===
-   .banner300 {
-    position:relative;
-    width:100%;
-    max-width:300px;
-    aspect-ratio:300 / 250; /* 🔥 gør den responsiv */
-    height:auto;
-    overflow:hidden;
-    font-family:Arial;
-    cursor:pointer;
-}
+    var style = document.createElement("style");
+    style.innerHTML = `
+
+      .banner300 {
+        position:relative;
+        width:100%;
+        max-width:300px;
+        aspect-ratio:300 / 250;
+        overflow:hidden;
+        font-family:Arial;
+        cursor:pointer;
+      }
 
       .banner-bg {
         position:absolute;
@@ -73,7 +75,6 @@
         background:url('https://raw.githubusercontent.com/Kim4690/Megabanner/main/Megabanner-bg.jpg') center/cover no-repeat;
       }
 
-      /* 🔥 BLÅ GRADIENT (ikke sort) */
       .banner300::after {
         content:"";
         position:absolute;
@@ -97,7 +98,6 @@
         opacity:0;
       }
 
-      /* VIDEN OM */
       .big-text {
         position:absolute;
         top:28%;
@@ -111,26 +111,24 @@
       }
 
       .big-text .om {
-        margin-left:30px; /* 🔥 rykker OM til højre */
+        margin-left:30px;
       }
 
       @keyframes zoomText {
-  0% {
-    transform:translate(-50%, -50%) scale(0.3);
-    opacity:0;
-  }
+        0% {
+          transform:translate(-50%, -50%) scale(0.3);
+          opacity:0;
+        }
+        40% {
+          transform:translate(-50%, -50%) scale(1.3);
+          opacity:1;
+        }
+        100% {
+          transform:translate(-50%, -50%) scale(1.15);
+          color:#ffffff;
+        }
+      }
 
-  40% {
-    transform:translate(-50%, -50%) scale(1.3);
-    opacity:1;
-  }
-
-  100% {
-    transform:translate(-50%, -50%) scale(1.15); /* 🔥 større slut */
-    color:#ffffff;
-  }
-}
-      /* TEKST */
       .text {
         position:absolute;
         bottom:75px;
@@ -143,7 +141,6 @@
         text-shadow:0 2px 6px rgba(0,0,0,0.5);
       }
 
-      /* CTA */
       .cta {
         position:absolute;
         bottom:0;
@@ -202,6 +199,7 @@
         margin-top:10px;
         line-height:1.4;
       }
+
     `;
     document.head.appendChild(style);
 
