@@ -136,7 +136,7 @@
         right:10px;
         text-align:center;
         color:#ffffff;
-        font-size:clamp(15px, 3.5vw, 15px);
+        font-size:clamp(18px, 3.5vw, 15px);
         line-height:1.4;
         text-shadow:0 2px 6px rgba(0,0,0,0.5);
       }
