@@ -1,0 +1,200 @@
+(function () {
+
+  function initBanner() {
+
+    var html = `
+    <div class="banner300">
+
+      <div class="banner-bg"></div>
+
+      <div class="content">
+
+        <div class="big-text">VIDEN OM</div>
+
+        <div class="text">
+          15 fagsektioner med nyheder,<br>
+          artikler og virksomheder
+        </div>
+
+        <div class="cta">
+          Se alle fagsektioner<br>
+          under VIDEN OM
+        </div>
+
+      </div>
+
+      <!-- OVERLAY -->
+      <div class="banner-modal" id="bannerModal">
+        <div class="modal-content">
+
+          <div class="close">&times;</div>
+
+          <h2>Tak for din interesse</h2>
+
+          <p>
+            Tak for at du klikkede på banneret.<br><br>
+            Du er meget velkommen til at kontakte:
+          </p>
+
+          <div class="contact-box">
+            <strong>Kim Anker</strong><br>
+            kim@odsgard.dk<br>
+            26 25 51 22
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    `;
+
+    document.body.insertAdjacentHTML("beforeend", html);
+
+    // === CSS ===
+    var style = document.createElement("style");
+    style.innerHTML = `
+      .banner300 {
+        position:relative;
+        width:300px;
+        height:250px;
+        overflow:hidden;
+        font-family:Arial;
+        cursor:pointer;
+      }
+
+      .banner-bg {
+        position:absolute;
+        inset:0;
+        background:url('https://raw.githubusercontent.com/Kim4690/Megabanner/main/Megabanner-bg.jpg') center/cover no-repeat;
+      }
+
+      .banner300::after {
+        content:"";
+        position:absolute;
+        inset:0;
+        background:linear-gradient(
+          to bottom,
+          rgba(0,60,120,0.8),
+          rgba(0,90,160,0.5),
+          transparent
+        );
+      }
+
+      .content {
+        position:relative;
+        z-index:2;
+        height:100%;
+      }
+
+      .big-text {
+        position:absolute;
+        top:30%;
+        left:50%;
+        transform:translate(-50%, -50%) scale(0.3);
+        font-size:32px;
+        font-weight:800;
+        color:#ffcc00;
+        animation:zoomText 2.5s forwards;
+      }
+
+      @keyframes zoomText {
+        0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; }
+        40% { transform:translate(-50%, -50%) scale(1.2); opacity:1; }
+        100% { transform:translate(-50%, -50%) scale(1); color:#fff; }
+      }
+
+      .text {
+        position:absolute;
+        bottom:70px;
+        left:10px;
+        right:10px;
+        color:#fff;
+        font-size:13px;
+        line-height:1.3;
+      }
+
+      .cta {
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        background:#ffcc00;
+        color:#000;
+        padding:10px;
+        font-size:13px;
+        text-align:center;
+      }
+
+      /* OVERLAY */
+      .banner-modal {
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.75);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        opacity:0;
+        pointer-events:none;
+        transition:.3s;
+      }
+
+      .banner-modal.active {
+        opacity:1;
+        pointer-events:all;
+      }
+
+      .modal-content {
+        background:#163575;
+        color:#fff;
+        padding:20px;
+        width:85%;
+        text-align:center;
+        border-radius:10px;
+        position:relative;
+        font-size:13px;
+      }
+
+      .modal-content h2 {
+        color:#ffcc00;
+        font-size:16px;
+        margin-bottom:10px;
+      }
+
+      .close {
+        position:absolute;
+        top:8px;
+        right:10px;
+        cursor:pointer;
+        font-size:18px;
+      }
+
+      .contact-box {
+        margin-top:10px;
+        line-height:1.4;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // === OVERLAY LOGIK ===
+    var banner = document.querySelector('.banner300');
+    var modal = document.getElementById('bannerModal');
+    var closeBtn = document.querySelector('.close');
+
+    banner.addEventListener('click', function () {
+      modal.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      modal.classList.remove('active');
+    });
+
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBanner);
+  } else {
+    initBanner();
+  }
+
+})();
